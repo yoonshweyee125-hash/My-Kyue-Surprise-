@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Every Love Story is Beautiful ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Arial", sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(135deg,#dff6ff,#ffe6f2);
+
+    overflow:auto;
+}
+
+body::before{
+
+content:"❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+font-size:60px;
+
+color:rgba(255,120,170,.05);
+
+display:flex;
+
+justify-content:space-around;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+pointer-events:none;
+
+animation:bgHeart 6s infinite alternate;
+
+}
+
+
+/* Stars */
+
+.star{
+
+    position:fixed;
+    color:white;
+    animation:twinkle 3s infinite;
+}
+
+
+@keyframes twinkle{
+
+    50%{
+        opacity:0.3;
+        transform:scale(1.5);
+    }
+
+}
+
+
+
+/* Card */
+
+.card{
+
+    width:90%;
+    max-width:400px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,0.35);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:30px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
+
+}
+
+
+
+/* Title */
+
+h1{
+
+    color:#ff6fae;
+
+    font-size:28px;
+
+    line-height:1.5;
+
+    text-shadow:
+    0 0 8px #ffb6d9,
+    0 0 20px #ff69b4;
+
+    animation:title 2s infinite alternate;
+
+}
+
+
+@keyframes title{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-8px);
+    }
+
+}
+
+
+.subtitle{
+
+    margin-top:15px;
+
+    color:#ff6fae;
+
+    font-size:17px;
+
+}
+
+
+
+/* Input */
+
+input{
+
+    margin-top:30px;
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+
+
+/* Button */
+
+button{
+
+    margin-top:20px;
+
+    padding:14px 40px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#ff6fae;
+
+    color:white;
+
+    font-size:18px;
+
+    box-shadow:0 0 15px #ffb6d9;
+
+}
+
+
+
+/* Error */
+
+#error{
+
+    margin-top:15px;
+
+    color:#ff4081;
+
+    font-style:italic;
+
+}
+
+#heartPage{
+    display:none;
+    text-align:center;
+}
+
+.heart-title{
+    color:#ff6fae;
+    text-shadow:0 0 12px #ffb6d9;
+}
+
+.heart{
+    width:120px;
+    height:120px;
+    background:#ff5c93;
+    margin:60px auto;
+    position:relative;
+    transform:rotate(-45deg);
+    animation:beat 1s infinite;
+    cursor:pointer;
+    box-shadow:0 0 25px #ff8fb8;
+}
+
+.heart::before,
+.heart::after{
+    content:"";
+    width:120px;
+    height:120px;
+    background:#ff5c93;
+    border-radius:50%;
+    position:absolute;
+}
+
+.heart::before{
+    top:-60px;
+    left:0;
+}
+
+.heart::after{
+    left:60px;
+    top:0;
+}
+
+@keyframes beat{
+    50%{
+        transform:rotate(-45deg) scale(1.12);
+    }
+}
+
+.tap-text{
+    color:#5fa8d3;
+    font-size:20px;
+    animation:blink 1.2s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:.4;
+    }
+}
+
+#letter{
+    display:none;
+    width:90%;
+    max-width:600px;
+    margin:40px auto;
+    text-align:center;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.anniversary-title{
+    color:#ff6fae;
+    text-shadow:
+    0 0 8px #ffb6d9,
+    0 0 20px #ff69b4;
+    margin-bottom:20px;
+}
+
+#letterText{
+    color:#5fa8d3;
+    font-size:18px;
+    line-height:2;
+    white-space:pre-line;
+    text-align:center;
+}
+
+.love-end{
+    color:#ff6fae;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:25px;
+}
+
+.red-heart{
+    color:red;
+    font-size:28px;
+}
+
+.space{
+    height:80px;
+}
+
+#gallery{
+
+display:none;
+
+text-align:center;
+
+animation:fadeIn 1s;
+
+}
+
+.gallery-title{
+
+color:#ff6fae;
+
+margin-bottom:20px;
+
+}
+
+#galleryImage{
+
+width:90%;
+
+max-width:350px;
+
+border-radius:25px;
+
+box-shadow:0 0 25px #ffb6d9;
+
+transition:.5s;
+
+}
+
+#caption{
+
+margin-top:15px;
+
+color:#5fa8d3;
+
+font-size:18px;
+
+}
+
+.gallery-buttons{
+
+margin-top:20px;
+
+}
+
+.gallery-buttons button{
+
+margin:0 10px;
+
+padding:10px 25px;
+
+}
+
+.dots{
+
+margin-top:20px;
+
+display:flex;
+
+justify-content:center;
+
+gap:12px;
+
+}
+
+.dot{
+
+width:14px;
+
+height:14px;
+
+border-radius:50%;
+
+background:#ffd6e8;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.dot.active{
+
+background:#ff5c93;
+
+transform:scale(1.4);
+
+box-shadow:0 0 12px #ff8fb8;
+
+}
+
+#photoCount{
+
+margin-top:10px;
+
+font-size:17px;
+
+color:#5fa8d3;
+
+}
+
+.next-page-btn{
+
+margin-top:25px;
+padding:15px 28px;
+
+background:#5fa8d3;
+color:white;
+
+border:none;
+border-radius:30px;
+
+font-size:17px;
+
+cursor:pointer;
+
+box-shadow:0 0 15px #9ed8f7;
+
+transition:.3s;
+
+}
+
+.next-page-btn:hover{
+
+transform:scale(1.05);
+
+}
+
+#musicPage{
+
+    display:none;
+    width:90%;
+    max-width:600px;
+    margin:40px auto;
+    text-align:center;
+
+}
+
+.music-title{
+
+    color:#ff6fae;
+    text-shadow:0 0 10px #ffb6d9;
+
+}
+
+.music-subtitle{
+
+    color:#5fa8d3;
+    margin:20px 0;
+
+}
+
+.music-card{
+
+    background:rgba(255,255,255,.35);
+    backdrop-filter:blur(12px);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    margin:20px 0;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+}
+
+.music-card h3{
+
+    color:#ff6fae;
+
+    margin-bottom:8px;
+
+}
+
+.music-card p{
+
+    color:#5fa8d3;
+
+    margin-bottom:15px;
+
+}
+
+.music-card audio{
+
+    width:100%;
+
+}
+
+.next-arrow{
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
+color:#ff6fae;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+padding:12px 18px;
+
+background:rgba(255,255,255,.55);
+
+border-radius:30px;
+
+box-shadow:0 0 12px #ffb6d9;
+
+transition:.3s;
+
+}
+
+.next-arrow:hover{
+
+transform:scale(1.05);
+
+}
+
+#finalPage{
+
+display:none;
+
+width:90%;
+max-width:650px;
+
+margin:40px auto;
+
+text-align:center;
+
+animation:fadeIn 1.5s;
+
+}
+
+.final-title{
+
+display:none;
+
+font-size:40px;
+
+color:#ff5c93;
+
+text-shadow:
+0 0 10px #ffb6d9,
+0 0 20px #ff69b4,
+0 0 35px #ff1493;
+
+animation:loveGlow 2s infinite alternate;
+
+}
+
+.final-text{
+
+margin-top:30px;
+
+font-size:22px;
+
+line-height:2;
+
+color:#5fa8d3;
+
+}
+
+.final-end{
+
+margin-top:50px;
+
+font-size:18px;
+
+color:#ff6fae;
+
+font-style:italic;
+
+}
+
+#kissIntro{
+
+font-size:60px;
+
+text-align:center;
+
+animation:kissIntro 2.5s forwards;
+
+}
+
+@keyframes kissIntro{
+
+0%{
+
+opacity:0;
+
+transform:scale(.3);
+
+}
+
+@keyframes loveGlow{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.05);
+
+}
+
+}
+
+@keyframes bgHeart{
+
+from{
+
+opacity:.25;
+
+}
+
+to{
+
+opacity:.55;
+
+}
+
+}
+
+30%{
+
+opacity:1;
+
+transform:scale(1.2);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:translateY(-250px);
+
+}
+
+}
+
+.final-title{
+
+display:none;
+
+margin-top:20px;
+
+}
+
+#finalMessage{
+
+display:none;
+
+}
+
+.line{
+
+opacity:0;
+
+font-size:22px;
+
+line-height:2;
+
+color:#5fa8d3;
+
+margin:25px 0;
+
+animation:fadeLine 1s forwards;
+
+}
+
+@keyframes fadeLine{
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+#finalTyping{
+
+color:#5fa8d3;
+
+font-size:22px;
+
+line-height:2;
+
+white-space:pre-line;
+
+margin-top:30px;
+
+}
+
+
+.final-end{
+
+display:none;
+
+margin-top:50px;
+
+font-size:28px;
+
+color:#ff6fae;
+
+text-shadow:
+0 0 10px #ffb6d9,
+0 0 20px #ff69b4;
+
+animation:endGlow 2s infinite alternate;
+
+}
+
+
+@keyframes endGlow{
+
+from{
+
+transform:scale(1);
+
+opacity:.8;
+
+}
+
+to{
+
+transform:scale(1.08);
+
+opacity:1;
+
+}
+
+}
+
+
+.heart-rain{
+
+position:fixed;
+
+top:-20px;
+
+font-size:25px;
+
+animation:rain 5s linear forwards;
+
+}
+
+
+@keyframes rain{
+
+from{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+to{
+
+transform:translateY(100vh);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<h1>
+❤️ Every Love Story is Beautiful...<br>
+But Ours is My Favorite ❤️
+</h1>
+
+
+<p class="subtitle">
+Made with all my love, just for you... 💕
+</p>
+
+
+
+<input 
+id="code"
+placeholder="Our Anniversary Date ❤️">
+
+
+
+<button onclick="checkCode()">
+💖 Come In
+</button>
+
+
+<p id="error"></p>
+
+</div>
+
+<div id="heartPage" style="display:none;">
+
+<h1 class="heart-title">
+❤️ Happy 3<sup>rd</sup> Anniversary ❤️
+</h1>
+
+<div class="heart" onclick="openHeart()"></div>
+
+<p class="tap-text">
+Tap My Heart 💖
+</p>
+
+</div>
+
+<div id="letter" style="display:none;">
+
+<h1 class="anniversary-title">
+😘 Happy <sup>3rd</sup> Years Anniversary 😘
+</h1>
+
+<div id="letterText"></div>
+
+<p class="love-end">
+<span class="red-heart">♥</span>
+Love You Forever
+<span class="red-heart">♥</span>
+</p>
+
+</div>
+
+<div id="gallery" style="display:none;">
+
+<h1 class="gallery-title">
+📸 Our Beautiful Memories 📸
+</h1>
+
+<img id="galleryImage"
+src="images/photo1.jpg">
+
+<p id="caption">
+Our First Memory Together ❤️
+</p>
+
+<div class="dots">
+
+<span class="dot active" onclick="showPhoto(0)"></span>
+
+<span class="dot" onclick="showPhoto(1)"></span>
+
+<span class="dot" onclick="showPhoto(2)"></span>
+
+<span class="dot" onclick="showPhoto(3)"></span>
+
+<span class="dot" onclick="showPhoto(4)"></span>
+
+</div>
+
+<p id="photoCount">
+1 / 5
+</p>
+
+
+<p class="love-end">
+<span class="red-heart">♥</span>
+Love You Forever
+<span class="red-heart">♥</span>
+</p>
+
+<div class="space"></div>
+
+<button class="next-page-btn" onclick="goMusicPage()">
+❤️နောက်ကိုဆက်ကြည့်မယ် ➜
+</button>
+
+</div>
+
+
+<div id="musicPage" style="display:none;">
+
+<h1 class="music-title">
+🎵 Our Playlist 🎵
+</h1>
+
+<p class="music-subtitle">
+These songs always remind me of you... ❤️
+</p>
+
+<div class="music-card">
+
+<h3>🎵 အပြာရောင်ည</h3>
+
+<p>မျိုးကြီး</p>
+
+<audio id="song1" controls>
+<source src="music/song1.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+<div class="music-card">
+
+<h3>🎵 ရာဇဝင်တွင်မယ့်ချစ်ခြင်း</h3>
+
+<p>ကောင်းကောင်း & အိုင်ရင်းဇင်မာမြင့်</p>
+
+<audio id="song2" controls>
+<source src="music/song2.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+<div class="next-arrow" onclick="goFinalPage()">
+နောက်သို့ ❤️ ➜
+</div>
+
+</div>
+
+<div id="finalPage" style="display:none;">
+
+<div id="kissIntro">
+💋💋💋
+<br>
+Mwahhhhh 😘
+</div>
+
+<h1 class="final-title">
+💖 My One & Only 💖
+</h1>
+
+<div id="finalMessage">
+
+<div id="finalTyping"></div>
+
+
+<div class="final-end">
+
+Forever & Always ❤️
+
+<br><br>
+
+2 / 8 / 2023
+
+<br>
+
+∞
+
+<br>
+
+Forever
+
+</div>
+
+
+</div>
+
+
+<script>
+
+
+function checkCode(){
+
+
+let input =
+document.getElementById("code").value.trim();
+
+
+
+input=input.replace(/[-.]/g,"/");
+
+
+let date=input.split("/");
+
+
+
+if(date.length===3 &&
+
+parseInt(date[0])===2 &&
+
+parseInt(date[1])===8 &&
+
+date[2]==="2023"){
+
+
+document.getElementById("error").innerHTML=
+"❤️ Welcome My Kyue... Preparing your surprise ✨";
+
+
+setTimeout(()=>{
+
+document.querySelector(".card").style.display="none";
+document.getElementById("heartPage").style.display="block";
+
+},1500);
+
+
+
+}else{
+
+
+document.getElementById("error").innerHTML=
+"🥺 Hmm... That's not the day our love story began.<br>Try again, My Love ❤️";
+
+
+}
+
+
+
+}
+
+let text =
+`ကြူးနဲ့တွေ့ခွင့်ရလို့
+ပူတူးအရမ်းကံကောင်းတယ်😍
+
+ကြူးကို အများကြီးချစ်တယ်နော်😘😘
+
+ကြူးက ပူတူးအတွက်
+အထူးခြားဆုံးလူသားလေးပါ 💞💞
+
+ပူတူးရဲ့နေ့ရက်တိုင်းမှာ
+ကြူးနဲ့အတူ ပျော်ရွှင်စွာဖြတ်သန်းချင်တယ်💖💖💕
+
+ဒီထပ်ပိုပြီး ချစ်သွားမယ်နော် 😘😘💕💗💗
+
+2.8.2023 ကစတင်ခဲ့တဲ့
+ပူတူးတို့ရဲ့အချစ်ခရီးလေးဟာ
+သားရေရတုတောင် ပြည့်ခဲ့ပြီနော် 😘😘
+
+ရှေ့ဆက်မယ့်နေ့ရက်တွေတိုင်းလည်း
+မလျော့သောချစ်ခြင်းများစွာနဲ့
+ကြူးကို တိုးပြီးချစ်သွားပါမယ့်ရှင့် 😍😍
+
+💕 I Love You So Much My Kyue 💕`;
+
+let index = 0;
+
+const photos=[
+
+"images/photo1.jpg",
+
+"images/photo2.jpg",
+
+"images/photo3.jpg",
+
+"images/photo4.jpg",
+
+"images/photo5.jpg"
+
+] ;
+let startX = 0;
+
+const captions=[
+
+"Our First Memory ❤️",
+
+"My Favorite Smile 🥰",
+
+"Our Happy Day 💕",
+
+"My Beautiful Kyue 🌸",
+
+"Forever Together ❤️"
+
+];
+
+let photoIndex=0;
+
+function typing(){
+
+    if(index < text.length){
+
+        document.getElementById("letterText").innerHTML += text.charAt(index);
+
+        index++;
+
+        setTimeout(typing,80);
+
+    }else{
+
+        setTimeout(()=>{
+
+            document.getElementById("letter").style.display = "none";
+
+            document.getElementById("gallery").style.display = "block";
+            
+            showPhoto(0);
+
+        },3000);
+
+    }
+
+}
+
+function openHeart(){
+
+    index = 0;
+    document.getElementById("letterText").innerHTML = "";
+
+    document.getElementById("heartPage").style.display = "none";
+
+    document.getElementById("letter").style.display = "block";
+
+    typing();
+
+}
+
+function showPhoto(num){
+
+photoIndex=num;
+
+document.getElementById("galleryImage").src=photos[photoIndex];
+
+document.getElementById("caption").innerHTML=captions[photoIndex];
+
+document.getElementById("photoCount").innerHTML=
+(photoIndex+1)+" / "+photos.length;
+
+let dots=document.querySelectorAll(".dot");
+
+dots.forEach(dot=>dot.classList.remove("active"));
+
+dots[photoIndex].classList.add("active");
+
+}
+
+const galleryImage = document.getElementById("galleryImage");
+
+galleryImage.addEventListener("touchstart", function(e){
+
+    startX = e.touches[0].clientX;
+
+});
+
+galleryImage.addEventListener("touchend", function(e){
+
+    let endX = e.changedTouches[0].clientX;
+
+    if(startX - endX > 50){
+
+        // ဘယ်ဘက်ကို ဆွဲ → နောက်ပုံ
+        photoIndex++;
+
+        if(photoIndex >= photos.length){
+            photoIndex = 0;
+        }
+
+        showPhoto(photoIndex);
+
+    }
+
+    else if(endX - startX > 50){
+
+        // ညာဘက်ကို ဆွဲ → အရင်ပုံ
+        photoIndex--;
+
+        if(photoIndex < 0){
+            photoIndex = photos.length - 1;
+        }
+
+        showPhoto(photoIndex);
+
+    }
+
+});
+
+function goMusicPage(){
+
+    document.getElementById("gallery").style.display = "none";
+
+    document.getElementById("musicPage").style.display = "block";
+
+}
+
+function goFinalPage(){
+
+document.getElementById("musicPage").style.display="none";
+
+document.getElementById("finalPage").style.display="block";
+
+setTimeout(()=>{
+
+document.getElementById("kissIntro").style.display="none";
+
+document.querySelector(".final-title").style.display="block";
+
+document.getElementById("finalMessage").style.display="block";
+
+finalTyping();
+
+},2500);
+
+}
+
+let finalText = 
+`ကြူးသဘောကျပြီး ပျော်တယ်ဆိုရင်
+ပူတူးဆီကို အမြန်ဆုံး
+အာဘွားသုံးခါ လာပေးပါနော်
+ချက်ချင်းနော် 🤭🤭😘😘😘❤️
+
+ပူတူး စောင့်နေပါတယ်ရှင့်
+
+ပူတူးကိုယ်တိုင်က
+ကြူးရဲ့ Surprise လေး
+ဖြစ်ချင်ပါတယ်ရှင့် 😍😍
+
+ချစ်တယ်နော်
+အပြုံးလေး 🥰💞❤️`;
+
+
+let finalIndex=0;
+
+
+function finalTyping(){
+
+if(finalIndex < finalText.length){
+
+document.getElementById("finalTyping").innerHTML += 
+finalText.charAt(finalIndex);
+
+
+finalIndex++;
+
+setTimeout(finalTyping,80);
+
+
+}else{
+
+
+setTimeout(()=>{
+
+document.querySelector(".final-end")
+.style.display="block";
+
+
+heartRain();
+
+
+},1500);
+
+
+}
+
+
+}
+
+
+
+function heartRain(){
+
+for(let i=0;i<40;i++){
+
+
+let h=document.createElement("div");
+
+h.className="heart-rain";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"%";
+
+h.style.animationDelay=
+Math.random()*3+"s";
+
+
+document.body.appendChild(h);
+
+
+setTimeout(()=>{
+
+h.remove();
+
+},5000);
+
+
+}
+
+
+}
+
+</script>
+
+<audio id="bgMusic"></audio>
+
+</body>
+</html>
